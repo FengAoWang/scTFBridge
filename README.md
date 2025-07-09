@@ -6,6 +6,15 @@ This is the source code of scTFBridge, consisting of quick start instructions. s
 
 ![scTFBridge Overview](figure1.png)
 
+### Key Features:
+-   🧬 **True Multi-Omic Integration**: Seamlessly integrates scRNA-seq and scATAC-seq data.
+-   🧩 **Modality Disentanglement**: Learns distinct and shared representations for each data type.
+-   🕸️ **GRN Inference**: Infers both *cis* (RE-to-gene) and *trans* (TF-to-gene) regulatory interactions.
+-   🧠 **Biologically Informed**: Uses TF-motif binding data to guide the model and improve accuracy.
+-   🔮 **Cross-Modal Prediction**: Predicts the state of one modality from another (e.g., generate RNA expression from ATAC profiles).
+
+---
+
 ## Contents
 - [Installation](#installation)
 - [Quick Start](#quick-start)
