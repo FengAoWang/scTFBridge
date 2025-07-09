@@ -1,9 +1,9 @@
 # scTFBridge
 [![PyPI Version](https://img.shields.io/pypi/v/sctfbridge.svg)](https://pypi.org/project/sctfbridge/)
 
-**scTFBridge: A Disentangled Deep Generative Model Informed by TF-Motif Binding for Gene Regulation Inference in Single-Cell Multi-Omics**
+**scTFBridge** is a novel disentangled deep generative model for single-cell multi-omics integration. It is specifically designed to infer gene regulatory networks (GRNs) by leveraging transcription factor (TF)-motif binding information as a biological prior.
 
-This is the source code of scTFBridge, consisting of quick start instructions. scTFBridge is a novel single-cell multi-omics integration method designed for modality disentanglement and gene regulatory network (GRN) inference. It leverages transcription factor (TF)-motif binding information to model complex regulatory relationships in single-cell data, enabling researchers to uncover insights into gene regulation across multiple omics layers.
+This method models the complex regulatory relationships in single-cell data, allowing researchers to uncover deep insights into gene regulation across multiple omics layers, such as scRNA-seq and scATAC-seq.
 
 ![scTFBridge Overview](figure1.png)
 
@@ -44,7 +44,7 @@ pip install sctfbridge
 ```
 
 
-## Quick Start
+## ⚡ Quick Start
 We provide the code in test_pypi_sctfbridge.ipynb to quickly employ scTFBridge. Here, we provide a demo to preprocess and train scTFBridge using a single-cell multi-omics dataset. The rheumatoid arthritis multi-omics dataset used in this demo is publicly available on the GEO database under accession code GSE243917.
 ### Data filtering
 This step generates the filtered data of scRNA-seq and scATAC-seq in defined output_path.
