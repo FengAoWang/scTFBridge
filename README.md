@@ -1,4 +1,5 @@
 # scTFBridge
+[![PyPI Version](https://img.shields.io/pypi/v/sctfbridge.svg)](https://pypi.org/project/sctfbridge/)
 
 **scTFBridge: A Disentangled Deep Generative Model Informed by TF-Motif Binding for Gene Regulation Inference in Single-Cell Multi-Omics**
 
@@ -8,7 +9,7 @@ This is the source code of scTFBridge, consisting of quick start instructions. s
 
 ### Key Features:
 -   🧬 **True Multi-Omic Integration**: Seamlessly integrates scRNA-seq and scATAC-seq data.
--   🧩 **Modality Disentanglement**: Learns distinct and shared representations for each data type.
+-   🧩 **Modality Disentanglement**: Learns modality-private and shared representations for each omics data.
 -   🕸️ **GRN Inference**: Infers both *cis* (RE-to-gene) and *trans* (TF-to-gene) regulatory interactions.
 -   🧠 **Biologically Informed**: Uses TF-motif binding data to guide the model and improve accuracy.
 -   🔮 **Cross-Modal Prediction**: Predicts the state of one modality from another (e.g., generate RNA expression from ATAC profiles).
@@ -19,9 +20,11 @@ This is the source code of scTFBridge, consisting of quick start instructions. s
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Tutorials](#tutorials)
+- [Citation](#-citation)
 ---
 
-## Installation
+## 🚀 Installation
+
 
 ### Prerequisites
 
@@ -108,16 +111,18 @@ model.fit(
 model.save('sctfbridge_model', overwrite=True)
 
 ```
+### Downstream Analysis with the Trained Model
 
-### Get disentangled latent representations
-Get latent embeddings from trained scTFBridge model
+#### A.Get disentangled latent representations
+Extract the learned embeddings for visualization (UMAP), clustering, or other analyses.
 ```bash
 output = model.get_embeddings(
     [gex_data, atac_adata, TF_adata],
 )
 ```
 
-### Cross omics prediction of scTFBridge
+#### B.Cross omics prediction of scTFBridge
+Predict one modality from another. For example, generate gene expression profiles from chromatin accessibility data.
 ```bash
 RNA_generated = model.predict_cross_omics(
     atac_adata,
@@ -126,16 +131,9 @@ RNA_generated = model.predict_cross_omics(
 )
 ```
 
-### Cross omics prediction of scTFBridge
-```bash
-RNA_generated = new_model.predict_cross_omics(
-    atac_adata,
-    'RNA',
-    device=torch.device('cuda:7'),
-)
-```
 
-### Inference cis-regulation(RE to target gene) from trained scTFBridge model
+
+#### C.Inference cis-regulation(RE to target gene) from trained scTFBridge model
 ```bash
 from sctfbridge.model import explain_RE2TG
 output = explain_RE2TG(model,
@@ -150,7 +148,7 @@ output = explain_RE2TG(model,
 
 ```
 
-### Inference trans-regulation(TF to target gene) from trained scTFBridge model
+#### D.Inference trans-regulation(TF to target gene) from trained scTFBridge model
 ```bash
 from sctfbridge.model import explain_TF2TG
 TF_output = explain_TF2TG(model,
@@ -163,8 +161,16 @@ TF_output = explain_TF2TG(model,
 
 ```
 
-## Tutorials
-Tutorials will be available soon.
+## 📚 Tutorials
+Tutorials with more detailed examples and advanced use cases will be available soon in the `tutorials/` directory. For a working example, please refer to the `test_pypi_sctfbridge.ipynb` notebook included in this repository.
 
+## 📄 Citation
+If you use scTFBridge in your research, please cite our publication:
+
+> **scTFBridge: A Disentangled Deep Generative Model Informed by TF-Motif Binding for Gene Regulation Inference in Single-Cell Multi-Omics**
+>
+> Feng, A. Wang, *et al*. (2025). *bioRxiv*.
+>
+> doi: [`10.1101/2025.01.16.633293v1`](https://www.biorxiv.org/content/10.1101/2025.01.16.633293v1)
 
 
