@@ -17,9 +17,9 @@ This method models the complex regulatory relationships in single-cell data, all
 ---
 
 ## Contents
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Tutorials](#tutorials)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Tutorials](#-tutorials)
 - [Citation](#-citation)
 ---
 
