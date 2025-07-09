@@ -1,7 +1,7 @@
 # scTFBridge
 [![PyPI Version](https://img.shields.io/pypi/v/sctfbridge.svg)](https://pypi.org/project/sctfbridge/)
 
-**scTFBridge** is a novel disentangled deep generative model for single-cell multi-omics integration. It is specifically designed to infer gene regulatory networks (GRNs) by leveraging transcription factor (TF)-motif binding information as a biological prior.
+**scTFBridge** is a novel single-cell multi-omics integration method designed for modality disentanglement and gene regulatory network (GRN) inference. It leverages transcription factor (TF)-motif binding information to model complex regulatory relationships in single-cell data, enabling researchers to uncover insights into gene regulation across multiple omics layers.
 
 This method models the complex regulatory relationships in single-cell data, allowing researchers to uncover deep insights into gene regulation across multiple omics layers, such as scRNA-seq and scATAC-seq.
 
