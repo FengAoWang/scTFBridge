@@ -162,7 +162,12 @@ TF_output = explain_TF2TG(model,
 ```
 
 ## 📚 Tutorials
-Tutorials with more detailed examples and advanced use cases will be available soon in the `tutorials/` directory. For a working example, please refer to the `test_pypi_sctfbridge.ipynb` notebook included in this repository.
+
+Tutorials with more detailed examples and advanced use cases are available in the `tutorials/` directory.
+
+* **Quick Start:** For a working example and basic usage, please refer to [`sctfbridge_quickstart.ipynb`](https://github.com/FengAoWang/scTFBridge/blob/main/tutorials/sctfbridge_quickstart.ipynb).
+* **Cross-omics Prediction:** This tutorial demonstrates how to use scTFBridge for cross-omics prediction tasks. See [`sctfbridge_cross_omics_prediction.ipynb`](https://github.com/FengAoWang/scTFBridge/blob/main/tutorials/sctfbridge_cross_omics_prediction.ipynb).
+* **Disentangled Embedding:** Learn how to generate and interpret disentangled embeddings with scTFBridge in this tutorial. See [`sctfbridge_disentangled_embedding.ipynb`](https://github.com/FengAoWang/scTFBridge/blob/main/tutorials/sctfbridge_disentangled_embedding.ipynb).
 
 ## 📄 Citation
 If you use scTFBridge in your research, please cite our publication:
