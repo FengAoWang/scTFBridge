@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 # -*- encodinng: uft-8 -*-
-'''
-@file: club.py
-@author:zyl
-@contact:zhangyilan@buaa.edu.cn
-@time:2024/3/28 21:55
-'''
 
 import torch
 import torch.nn as nn

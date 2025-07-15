@@ -2,6 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import anndata
+from array_api_compat import device
+
 from .utils.loss_function import KL_loss, Reconstruction_loss
 from .CLUB import MIEstimator
 import pandas as pd
@@ -627,6 +629,16 @@ class scTFBridge(nn.Module):
         #   cross-modal generation
         rna_recon_cross_from_atac = self.RNADecoder(
             torch.cat([atac_share_latent_z, prior_z_rna, recon_batch_id], dim=1))
+
+        return rna_recon_cross_from_atac
+
+    def rna_generation_from_rna_private(self, rna_private_latent_z, batch_id):
+        latent_share = torch.randn_like(rna_private_latent_z)
+        device = batch_id.device
+
+        recon_batch_id = torch.zeros_like(batch_id).to(device)
+        rna_recon_cross_from_atac = self.RNADecoder(
+            torch.cat([latent_share, rna_private_latent_z, batch_id], dim=1))
 
         return rna_recon_cross_from_atac
 
@@ -1321,7 +1333,7 @@ def explain_TF2TG(scModel: scTFBridge,
 
     # --- Model and Explainer Initialization ---
     print("  - Initializing explanation model and background samples...")
-    explain_model = explainModelLatentZ(scModel, 'rna', 128, 0)
+    explain_model = explainModelLatentZ(scModel, 'rna', scModel.latent_dim, 0)
     explain_model.eval()
     explain_model.to(device)
     all_attributions = []
